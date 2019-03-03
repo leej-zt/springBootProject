@@ -19,7 +19,6 @@ import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 @Configuration
 public class AppConfig {
 
-
 	@Autowired
 	private DataSource datasource;
 
