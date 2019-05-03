@@ -10,37 +10,54 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.example.pj1.form.LoginForm;
 import com.example.pj1.service.LoginService;
 
+/** ログインコントローラー. */
 @Controller
 @RequestMapping("/login")
 public class LoginController {
 
-	@Autowired
-	private LoginService loginService;
+    /** ログインサービス. */
+    @Autowired
+    private LoginService loginService;
 
-	@Value("${title.login}")
-	private String title;
+    /** 画面表示用タイトル. */
+    @Value("${title.login}")
+    private String title;
 
-	@RequestMapping(method = RequestMethod.GET)
-	public String testController(final LoginForm form,
-			final Model model) throws Exception {
+    /**
+     * GETリクエスト(初期表示用).
+     *  @param form LoginForm.
+     *  @param model Model.
+     *  @return String 画面名.
+     *  @throws Exception 例外.
+     * */
+    @RequestMapping(method = RequestMethod.GET)
+    public String testController(final LoginForm form,
+            final Model model) throws Exception {
 
-		model.addAttribute("title", title);
+        model.addAttribute("title", title);
 
-		return "Login";
-	}
+        return "Login";
+    }
 
-	@RequestMapping(method = RequestMethod.POST)
-	public String login(final LoginForm form,
-			final Model model) throws Exception {
+    /**
+     * POSTリクエスト(ログイン処理用).
+     *  @param form LoginForm.
+     *  @param model Model.
+     *  @return String 画面名.
+     *  @throws Exception 例外.
+     * */
+    @RequestMapping(method = RequestMethod.POST)
+    public String login(final LoginForm form,
+            final Model model) throws Exception {
 
-		boolean login = loginService.login(form);
-		if(!login) {
-			model.addAttribute("loginCheck","fail");
-		}
+        boolean login = loginService.login(form);
+        if (!login) {
+            model.addAttribute("loginCheck", "fail");
+        }
 
 
-		return "Login";
-	}
+        return "Login";
+    }
 
 
 }

@@ -8,27 +8,29 @@ import org.springframework.stereotype.Service;
 
 import com.example.pj1.form.LoginForm;
 
+/** ログインサービス. */
 @Service
-public class LoginServiceImpl implements LoginService{
+public class LoginServiceImpl implements LoginService {
 
-	@Override
-	public boolean login(LoginForm form) throws Exception {
+    @Override
+    public final boolean login(final LoginForm form)
+            throws Exception {
 
-		try {
-			String userId = form.getUserId();
-			String password = form.getPassword();
+        try {
+            String userId = form.getUserId();
+            String password = form.getPassword();
 
-			Subject currentUser = SecurityUtils.getSubject();
-			UsernamePasswordToken token =
-					new UsernamePasswordToken(userId, password);
-		    currentUser.login(token);
-		} catch(AuthenticationException ae) {
-			return false;
-		} catch(Exception e) {
-			return false;
-		}
-		return true;
+            Subject currentUser = SecurityUtils.getSubject();
+            UsernamePasswordToken token =
+                    new UsernamePasswordToken(userId, password);
+            currentUser.login(token);
+        } catch (AuthenticationException ae) {
+            return false;
+        } catch (Exception e) {
+            return false;
+        }
+        return true;
 
-	}
+    }
 
 }
