@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <script type="text/javascript" th:src="@{/js/Login.js}"></script>
-<title>Insert title here</title>
+<title>ログイン</title>
 </head>
 <body>
 
@@ -19,12 +19,12 @@
     <div class="messageBox" id="loginError"></div>
 
     <div>
-      <span>ID</span>
+      <span class="w25">ID</span>
       <input type="text" id="userId" name="userID" th:field="*{userId}"/>
     </div>
     <div>
-      <span>PW</span>
-      <input type="text" id="password" name="password" th:field="*{password}"/>
+      <span class="w25">PW</span>
+      <input type="password" id="password" name="password" th:field="*{password}"/>
     </div>
     <br/>
     <div>

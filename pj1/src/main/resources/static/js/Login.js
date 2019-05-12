@@ -26,7 +26,7 @@ $(document).ready(function(){
           $(".messageBox").show();
         // TOP画面へ遷移
         } else {
-
+          location.href = "/top";
         }
 
       // 異常終了

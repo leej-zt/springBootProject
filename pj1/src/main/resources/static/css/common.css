@@ -10,3 +10,9 @@
   color: red;
 
 }
+
+/* width25px */
+.w25 {
+  width: 25px;
+  display: inline-block;
+}

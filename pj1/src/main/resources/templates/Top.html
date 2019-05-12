@@ -1,0 +1,19 @@
+<!-- トップ画面 -->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/LAYOUT}">
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript" th:src="@{/js/Top.js}"></script>
+<title>トップ</title>
+</head>
+<body>
+
+<div id="main" layout:fragment="main" class="container">
+  <br/><h3 id="title" th:text="${title}">title</h3>
+  お知らせリスト追加予定
+</div>
+</body>
+</html>
