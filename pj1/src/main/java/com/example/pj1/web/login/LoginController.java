@@ -1,4 +1,4 @@
-package com.example.pj1.web;
+package com.example.pj1.web.login;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -7,8 +7,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.example.pj1.form.LoginForm;
-import com.example.pj1.service.LoginService;
+import com.example.pj1.form.login.LoginForm;
+import com.example.pj1.service.login.LoginService;
 
 /** ログインコントローラー. */
 @Controller
@@ -51,10 +51,11 @@ public class LoginController {
             final Model model) throws Exception {
 
         boolean login = loginService.login(form);
+
+        // 認証エラーの場合
         if (!login) {
             model.addAttribute("loginCheck", "fail");
         }
-
 
         return "Login";
     }

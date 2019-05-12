@@ -1,6 +1,6 @@
-package com.example.pj1.service;
+package com.example.pj1.service.login;
 
-import com.example.pj1.form.LoginForm;
+import com.example.pj1.form.login.LoginForm;
 
 /** ログインサービス. */
 public interface LoginService {

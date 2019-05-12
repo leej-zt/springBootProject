@@ -1,4 +1,4 @@
-package com.example.pj1.form;
+package com.example.pj1.form.login;
 
 /** ログインform. */
 public class LoginForm {

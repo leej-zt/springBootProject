@@ -1,4 +1,4 @@
-package com.example.pj1.service;
+package com.example.pj1.service.login;
 
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
@@ -6,7 +6,7 @@ import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
 import org.springframework.stereotype.Service;
 
-import com.example.pj1.form.LoginForm;
+import com.example.pj1.form.login.LoginForm;
 
 /** ログインサービス. */
 @Service
