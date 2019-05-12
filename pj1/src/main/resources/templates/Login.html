@@ -11,8 +11,8 @@
 </head>
 <body>
 
-<div id="main" layout:fragment="main">
-  <h3 id="title" th:text="${title}">test</h3>
+<div id="main" layout:fragment="main" class="container">
+  <br/><h3 id="title" th:text="${title}">title</h3>
   <form role="form" id="login_form" th:object="${loginForm}">
     <div>
       <span>ID</span>
@@ -21,6 +21,10 @@
     <div>
       <span>PW</span>
       <input type="text" id="password" name="password" th:field="*{password}"/>
+    </div>
+    <br/>
+    <div>
+      <input type="button" class="btn btn-primary" id="loginButton" value="ログイン"/>
     </div>
   </form>
 </div>
