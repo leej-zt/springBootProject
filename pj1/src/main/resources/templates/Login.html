@@ -1,9 +1,9 @@
 <!-- ログイン画面 -->
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorate="~{layouts/LAYOUT}">
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  layout:decorate="~{layouts/LAYOUT}">
 <head>
 <meta charset="UTF-8">
 <script type="text/javascript" th:src="@{/js/Login.js}"></script>
@@ -11,26 +11,31 @@
 </head>
 <body>
 
-<div id="main" layout:fragment="main" class="container">
-  <br/><h3 id="title" th:text="${title}">title</h3>
-  <form role="form" id="login_form" th:object="${loginForm}">
+  <div id="main" layout:fragment="main" class="container">
+    <br />
+    <div class="login">
+      <h3 id="title" th:text="${title}">title</h3>
+      <form role="form" id="login_form" th:object="${loginForm}">
 
-    <div th:if="${loginCheck}" th:text="${loginCheck}" id="result"></div>
-    <div class="messageBox" id="loginError"></div>
+        <div th:if="${loginCheck}" th:text="${loginCheck}" id="result"></div>
+        <div class="messageBox" id="loginError"></div>
 
-    <div>
-      <span class="w25">ID</span>
-      <input type="text" id="userId" name="userID" th:field="*{userId}"/>
+        <div>
+          <span class="w25">ID</span> <input type="text" id="userId"
+            name="userID" th:field="*{userId}" />
+        </div>
+        <div>
+          <span class="w25">PW</span> <input type="password" id="password"
+            name="password" th:field="*{password}" />
+        </div>
+        <br />
+        <div class="right">
+          <input type="button" class="btn btn-primary" id="loginButton"
+            value="ログイン" />
+        </div>
+
+      </form>
     </div>
-    <div>
-      <span class="w25">PW</span>
-      <input type="password" id="password" name="password" th:field="*{password}"/>
-    </div>
-    <br/>
-    <div>
-      <input type="button" class="btn btn-primary" id="loginButton" value="ログイン"/>
-    </div>
-  </form>
-</div>
+  </div>
 </body>
 </html>

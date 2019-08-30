@@ -5,6 +5,12 @@
   margin-bottom: 10px;
 }
 
+/* ログイン画面 */
+.login {
+  width: 300px;
+  margin: auto;
+}
+
 /* エラーメッセージ */
 .messageBox {
   color: red;
@@ -15,4 +21,9 @@
 .w25 {
   width: 25px;
   display: inline-block;
+}
+
+/* 右揃え */
+.right {
+float: right;
 }

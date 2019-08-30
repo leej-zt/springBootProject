@@ -8,7 +8,10 @@
 </head>
 <body>
   <div id="header" layout:fragment="header" class="container">
-    <div class="header">HEADER</div>
+    <img th:src="@{/img/logo.png}" />
+    <div>
+      <span th:if="${userId}" th:text="${userId}"></span>
+    </div>
   </div>
 </body>
 </html>
